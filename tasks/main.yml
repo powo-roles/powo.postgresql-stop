@@ -3,7 +3,18 @@
 - name: stop and disable
   become: true
   become_user: root
+  ignore_errors: true
+  with_items:
+    - ""
+    - "-9.0"
+    - "-9.1"
+    - "-9.2"
+    - "-9.3"
+    - "-9.4"
+    - "-9.5"
+    - "-9.6"
+    - "-10.0"
   service:
-    name: postgresql
+    name: postgresql{{ item }}
     state: stopped
     enabled: false
