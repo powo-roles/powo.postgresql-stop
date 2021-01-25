@@ -14,6 +14,9 @@
     - "-9.5"
     - "-9.6"
     - "-10.0"
+    - "-11.0"
+    - "-12.0"
+    - "-13.0"
   service:
     name: postgresql{{ item }}
     state: stopped
