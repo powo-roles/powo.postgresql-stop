@@ -5,20 +5,9 @@
   become_user: root
   ignore_errors: true
   with_items:
-    - ""
-    - "-9.0"
-    - "-9.1"
-    - "-9.2"
-    - "-9.3"
-    - "-9.4"
-    - "-9.5"
-    - "-9.6"
-    - "-10.0"
-    - "-11.0"
-    - "-12.0"
-    - "-13.0"
-    - "-14.0"
+    - "9.6"
+    - "10"
   service:
-    name: postgresql{{ item }}
+    name: postgresql-{{ item }}-default.service
     state: stopped
     enabled: false
